@@ -1,0 +1,22 @@
+Q3
+a)
+abhijeet@debian:~/Abhijeet240911212_ITB$ find . -type f -name "*.txt"
+./Lab1/Lab1_3.txt
+./Lab1/Lab1_2.txt
+./Lab1/Lab1_1.txt
+./temp/file.txt
+
+b)
+abhijeet@debian:~/Abhijeet240911212_ITB$ find . -type f -name "*[0-9]*"
+./Lab1/Lab1_3.txt
+./Lab1/Lab1_2.txt
+./Lab1/Lab1_1.txt
+
+c)
+abhijeet@debian:~/Abhijeet240911212_ITB$ find . -type f -name "????*.txt"
+./Lab1/Lab1_3.txt
+./Lab1/Lab1_2.txt
+./Lab1/Lab1_1.txt
+./temp/dummy.txt
+./temp/file.txt
+

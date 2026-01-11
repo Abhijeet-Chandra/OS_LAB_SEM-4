@@ -1,0 +1,196 @@
+a. cat command:
+
+cat file.txt to view contents of a file.
+cat > file.txt to create new file
+cat >> file.txt to append something to existing file.
+cat file1.txt file2.txt to display 2 files at once.
+
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ cat > file.txt
+I am using debian!!!!!!!!!!!!!!!!!!!!
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ cat file.txt
+I am using debian!!!!!!!!!!!!!!!!!!!!
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ cat >> file.txt
+HELLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!123456
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ cat file.txt
+I am using debian!!!!!!!!!!!!!!!!!!!!
+HELLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!123456
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ cat > file_new.txt
+I am learning about linux terminal commands!!!!!     
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ cat file.txt
+I am using debian!!!!!!!!!!!!!!!!!!!!
+HELLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!123456
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ cat file_new.txt
+I am learning about linux terminal commands!!!!!
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ cat file.txt file_new.txt
+I am using debian!!!!!!!!!!!!!!!!!!!!
+HELLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!123456
+I am learning about linux terminal commands!!!!!
+
+
+b. head and tail
+
+head file.txt return first 10 lines
+head -n (some number say x) file.txt returns first x lines
+head -c (some number say x) file.txt return firxt x bytes of text
+
+similar for tail as well.
+
+
+bhijeet@debian:~/Abhijeet240911212_ITB/temp$ head file.txt
+I am using debian!!!!!!!!!!!!!!!!!!!!
+HELLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!123456
+I am using debian!!!!!!!!!!!!!!!!!!!!
+HELLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!123456
+I am using debian!!!!!!!!!!!!!!!!!!!!
+HELLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!123456
+I am using debian!!!!!!!!!!!!!!!!!!!!
+HELLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!123456
+I am using debian!!!!!!!!!!!!!!!!!!!!
+HELLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!123456
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ head -n 5 file.txt
+I am using debian!!!!!!!!!!!!!!!!!!!!
+HELLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!123456
+I am using debian!!!!!!!!!!!!!!!!!!!!
+HELLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!123456
+I am using debian!!!!!!!!!!!!!!!!!!!!
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ head -c 20 file.txt
+I am using debian!!!abhijeet@debian:~/Abhijeet240911212_ITB/temp$ tail.file.txt
+bash: tail.file.txt: command not found
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ tail file.txt
+HELLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!123456
+I am using debian!!!!!!!!!!!!!!!!!!!!
+HELLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!123456
+I am using debian!!!!!!!!!!!!!!!!!!!!
+HELLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!123456
+I am using debian!!!!!!!!!!!!!!!!!!!!
+HELLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!123456
+I am using debian!!!!!!!!!!!!!!!!!!!!
+HELLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!123456
+
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ tail -n 5 file.txt
+I am using debian!!!!!!!!!!!!!!!!!!!!
+HELLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!123456
+I am using debian!!!!!!!!!!!!!!!!!!!!
+HELLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!123456
+
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ tail -c 20 file.txt
+!!!!!!!!!!!!123456
+
+c. copy (cp)
+
+cp -n file1.txt file2.txt
+it will copy contents of file1 to file2 only if its not created
+
+cp -i file1.txt file2.txt
+it will ask for permission, if 'y' is entered then it will erase all the exsisting content of file2 and copy content from file 1, if file2 does not exist it will just create a new one and copy its content
+
+cp -f file1.txt file2.txt
+it will force overwrite i.e. if file2 is present it will just erase all of its content and copy contents from file1, if file2 doest no exist it will just create create a new one and copy its content
+
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ cp -n file.txt file_new.txt
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ cp -i file.txt file_new.txt
+cp: overwrite 'file_new.txt'? y
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ cp -f file.txt file_new.txt
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ cp -i file.txt file_new.txt
+
+d. mv
+
+Move directory: mv dir1 dir2
+Move multiple files into a directory: mv file1 file2 file3 myfolder/
+Rename files(confirm from user): mv -i old.txt new.txt
+Rename files(force move): mv -f old.txt new.txt
+
+
+abhijeet@debian:~/Abhijeet240911212_ITB/temp/dir1$ mv dir1 dir2
+mv: cannot stat 'dir1': No such file or directory
+abhijeet@debian:~/Abhijeet240911212_ITB/temp/dir1$ cd ..
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ mv dir1 dir2
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ mv dir2/dir1 temp
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ mv dir1 dir2
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ mv dir2/dir1 temp
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ mv dir1 dir2
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ cd ..
+abhijeet@debian:~/Abhijeet240911212_ITB$ mv temp/dir1/dir2 temp
+mv: cannot stat 'temp/dir1/dir2': No such file or directory
+abhijeet@debian:~/Abhijeet240911212_ITB$ mv temp/dir2/dir1 temp
+abhijeet@debian:~/Abhijeet240911212_ITB$ cd temp
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ mv file_new.txt /home/abhijeet/downloads
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ cd dir1
+abhijeet@debian:~/Abhijeet240911212_ITB/temp/dir1$ touch file_x.txt
+abhijeet@debian:~/Abhijeet240911212_ITB/temp/dir1$ mv file_x.txt /home/abhijeet/Downloads
+abhijeet@debian:~/Abhijeet240911212_ITB/temp/dir1$ mv -i file.txt file_new.txt
+mv: cannot stat 'file.txt': No such file or directory
+abhijeet@debian:~/Abhijeet240911212_ITB/temp/dir1$ cd ..
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ mv -i file.txt file_new.txt
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ mv -f file.txt file_new.txt
+mv: cannot stat 'file.txt': No such file or directory
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ mv -f file_new.txt file.txt
+
+e. rm
+
+delete a file: rm file.txt
+ask before deleting: rm -i file.txt
+delete a directory recursively: rm -r folderTobeDeleted
+force delete: rm - rf folderToBeDeleted
+
+By recursively we mean first the lowest entities will be deleted and their parents(folders) will be deleted...
+
+Also.. we can't do rm folderTobeDeleted, it wont work
+
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ rm file.txt
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ rm -i file1.txt
+rm: remove regular file 'file1.txt'? n
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ rm -r temp
+rm: cannot remove 'temp': No such file or directory
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ cd ..
+abhijeet@debian:~/Abhijeet240911212_ITB$ rm -r temp
+abhijeet@debian:~/Abhijeet240911212_ITB$ mkdir tmep
+abhijeet@debian:~/Abhijeet240911212_ITB$ rm -rf tmep
+
+f. rmdir (removes ONLY empty directories):
+if directory IS NOT EMPTY it wont work.
+
+abhijeet@debian:~/Abhijeet240911212_ITB$ mkdir temp
+abhijeet@debian:~/Abhijeet240911212_ITB$ rmdir temp
+abhijeet@debian:~/Abhijeet240911212_ITB$ mkdir temp
+abhijeet@debian:~/Abhijeet240911212_ITB$ cd temp
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ mkdir dir1
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ touch file.txt
+abhijeet@debian:~/Abhijeet240911212_ITB/temp$ cd ..
+abhijeet@debian:~/Abhijeet240911212_ITB$ rmdir temp
+rmdir: failed to remove 'temp': Directory not empty
+abhijeet@debian:~/Abhijeet240911212_ITB$ 
+
+g. find:
+find by name: find . -name file.txt
+
+find by type:
+find . -type f   # for files
+find . -type d   # for directories
+
+combination of both:
+find . -type f -name "*.txt"
+
+abhijeet@debian:~/Abhijeet240911212_ITB$ find . -name file.txt
+./temp/file.txt
+abhijeet@debian:~/Abhijeet240911212_ITB$ find . -name Lab1_1.txt
+./Lab1/Lab1_1.txt
+abhijeet@debian:~/Abhijeet240911212_ITB$ find . -name .txt
+abhijeet@debian:~/Abhijeet240911212_ITB$ find . -type f
+./Lab1/Lab1_2.txt
+./Lab1/Lab1_1.txt
+./temp/file.txt
+abhijeet@debian:~/Abhijeet240911212_ITB$ find . -type d
+.
+./Lab1
+./temp
+./temp/dir1
+abhijeet@debian:~/Abhijeet240911212_ITB$ find . -name "*.txt"
+./Lab1/Lab1_2.txt
+./Lab1/Lab1_1.txt
+./temp/file.txt
+abhijeet@debian:~/Abhijeet240911212_ITB$ find . -type f -name "*.txt"
+./Lab1/Lab1_2.txt
+./Lab1/Lab1_1.txt
+./temp/file.txt
+

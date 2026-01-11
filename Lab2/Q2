@@ -1,0 +1,10 @@
+To select the lines from a file that have exactly two characters:
+grep '^..$' dummy.txt
+• To select the lines from a file that start with the upper case letter:
+=>grep '[A-Z]' dummy.txt
+• To select the lines from a file that end with a period.
+=>grep '\.$' dummy.txt
+• To select the lines in a file that has one or more blank spaces.
+=>grep '[ ]\+' dummy.txt
+• To select the lines in a file and direct them to another file which has digits as one of the characters in that line.
+=>grep '[0-9]' dummy.txt > test.txt

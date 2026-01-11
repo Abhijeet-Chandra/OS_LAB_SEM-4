@@ -1,0 +1,36 @@
+few commands that i have used are:
+1. cd
+2. ls
+3. cd -
+4. mkdir
+5. touch
+6. cd ..
+
+terminal:
+
+abhijeet@debian:~$ pwd
+/home/abhijeet
+abhijeet@debian:~$ mkdir Abhijeet240911212_ITB
+abhijeet@debian:~$ cd Abhijeet240911212_ITB
+abhijeet@debian:~/Abhijeet240911212_ITB$ mkdir Lab1
+abhijeet@debian:~/Abhijeet240911212_ITB$ touch Lab1_1.txt
+abhijeet@debian:~/Abhijeet240911212_ITB$ cd Lab1
+abhijeet@debian:~/Abhijeet240911212_ITB/Lab1$ touch Lab1_1.txt
+abhijeet@debian:~/Abhijeet240911212_ITB/Lab1$ pwd
+/home/abhijeet/Abhijeet240911212_ITB/Lab1
+abhijeet@debian:~/Abhijeet240911212_ITB/Lab1$ ls
+Lab1_1.txt
+abhijeet@debian:~/Abhijeet240911212_ITB/Lab1$ cd-
+bash: cd-: command not found
+abhijeet@debian:~/Abhijeet240911212_ITB/Lab1$ cd -
+/home/abhijeet/Abhijeet240911212_ITB
+abhijeet@debian:~/Abhijeet240911212_ITB$ cd -
+/home/abhijeet/Abhijeet240911212_ITB/Lab1
+abhijeet@debian:~/Abhijeet240911212_ITB/Lab1$ ls
+Lab1_1.txt
+abhijeet@debian:~/Abhijeet240911212_ITB/Lab1$ cd ..
+abhijeet@debian:~/Abhijeet240911212_ITB$ cd ..
+abhijeet@debian:~$ ls
+Abhijeet240911212_ITB  core.2893  Documents  Pictures   Videos
+core.12875             core.2895  Downloads  Public
+core.2866              Desktop    Music      Templates

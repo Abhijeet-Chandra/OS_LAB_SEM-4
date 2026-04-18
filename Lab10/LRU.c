@@ -28,13 +28,29 @@ void LRU(int n, int f, int*pages, int* frames){
         }
         //page fault
         else{
-            int lru = 0;
-            for(int j = 1; j<f; j++){
-                if(time[j]<time[lru]) lru = j;
+
+            int pos_empty = -1;
+
+            for(int j = 0; j<f; j++){
+                if(frames[j] == -1){
+                    pos_empty = j;
+                    break;
+                }
             }
 
-            frames[lru] = pages[i];
-            time[lru] = ++counter;
+            if(pos_empty != -1){
+                frames[pos_empty] = pages[i];
+                time[pos_empty] = ++counter;
+            }
+            else{
+                int lru = 0;
+                for(int j = 1; j<f; j++){
+                    if(time[j]<time[lru]) lru = j;
+                }
+
+                frames[lru] = pages[i];
+                time[lru] = ++counter;
+            }
             faults++;
         }
 
@@ -54,7 +70,7 @@ int main(){
     printf("Enter the number of pages: ");
     scanf("%d", &n);
 
-    int *pages = (int*) malloc(n*sizeof(pages));
+    int *pages = (int*) malloc(n*sizeof(int));
     printf("\nEnter reference string: ");
     for(int i = 0; i<n; i++)scanf("%d", &pages[i]);
 

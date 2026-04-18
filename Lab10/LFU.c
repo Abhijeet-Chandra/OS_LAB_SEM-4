@@ -28,13 +28,29 @@ void LFU(int n, int f, int* pages, int* frames){
         }
         //page fault
         else{
-            int lfu = 0;
+            //check if any position is empty
+            int pos_empty = -1;
             for(int j = 0; j<f; j++){
-                if(freq[j]<freq[lfu]) lfu = j;
+                if(frames[j] == -1){
+                    pos_empty = j;
+                    break;
+                }
             }
+            //if empty then place it there
+            if(pos_empty != -1){
+                frames[pos_empty] = pages[i];
+                freq[pos_empty] = 1;
+            }
+            //else apply lfu
+            else{
+                int lfu = 0;
+                for(int j = 0; j<f; j++){
+                    if(freq[j]<freq[lfu]) lfu = j;
+                }
 
-            frames[lfu] = pages[i];
-            freq[lfu] = 1;
+                frames[lfu] = pages[i];
+                freq[lfu] = 1;
+            }
             faults++;
         }
 

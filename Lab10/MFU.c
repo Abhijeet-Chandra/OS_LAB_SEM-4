@@ -47,7 +47,7 @@ void MFU(int n, int f, int* pages, int* frames){
             //else apply mfu
             else{
                 int mfu = 0;
-                for(int j = 0; j<f; j++){
+                for(int j = 1; j<f; j++){
                     if(freq[j]>freq[mfu] || (freq[j] == freq[mfu]&&time[j]<time[mfu])) mfu = j;
                 }
 

@@ -95,7 +95,7 @@ int main(){
 
         for(int i = n-1; i>=index; i--){
             printf(" -> %d ", req[i]);
-            total+=(current-req[i]);
+            total+=abs(current-req[i]);
             current = req[i];
         }
     }
